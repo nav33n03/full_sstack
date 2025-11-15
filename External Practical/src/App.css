@@ -1,0 +1,89 @@
+
+:root{
+	--bg: #f8fafc;
+	--card: #ffffff;
+	--muted: #64748b;
+	--text: #0f172a;
+	--accent: #2563eb;
+	--accent-600: #1e40af;
+	--border: #e6eef6;
+	--radius: 8px;
+}
+
+.html,body,#root { height: 100%; }
+html, body, #root { height: 100%; }
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px; /* ensures space on small viewports */
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	background: var(--bg);
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+	max-width: 720px;
+	margin: 0; /* now centered by body flexbox */
+	padding: 20px;
+}
+
+.app-container h1{ margin:0 0 12px 0; font-size:1.5rem; }
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	padding: 16px;
+	border-radius: var(--radius);
+	box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+
+form.card { display:block; }
+
+.field { margin-bottom: 12px; }
+.field label{ display:block; margin-bottom:6px; font-weight:600; color:var(--text); }
+.field input,
+.field textarea{
+	width:100%;
+	padding:10px 12px;
+	font-size:14px;
+	border:1px solid #dbeefb;
+	border-radius:6px;
+	background: #fff;
+	color: #000; /* ensure typed text is visible */
+	box-sizing:border-box;
+}
+.field textarea{ min-height:120px; resize:vertical }
+
+.field input::placeholder,
+.field textarea::placeholder{
+  color: var(--muted);
+  opacity: 1;
+}
+
+.field input:focus, .field textarea:focus{
+	outline:none;
+	border-color: var(--accent);
+	box-shadow: 0 0 0 6px rgba(37,99,235,0.08);
+}
+
+.actions { margin-top:6px; }
+.btn {
+	display:inline-block;
+	background:var(--accent);
+	color:#fff; border:none; padding:8px 14px; border-radius:6px; cursor:pointer; font-weight:600;
+}
+.btn:hover{ background:var(--accent-600); }
+
+.post-preview{ margin-top:18px; }
+.post-preview .card{ border-left:4px solid var(--accent); }
+.post-preview h2{ margin:0 0 8px 0; font-size:1.2rem }
+.post-preview p{ margin:0; color:var(--muted); white-space:pre-wrap }
+
+@media (max-width:480px){
+	.app-container{ margin:18px; padding:8px }
+}
